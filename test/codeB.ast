@@ -1,0 +1,362 @@
+FileAST: 
+  Typedef: date, [], ['typedef']
+    TypeDecl: date, []
+      Struct: None
+        Decl: month, [], [], []
+          TypeDecl: month, []
+            IdentifierType: ['int']
+        Decl: day, [], [], []
+          TypeDecl: day, []
+            IdentifierType: ['int']
+  Decl: f, [], [], []
+    FuncDecl: 
+      ParamList: 
+        Decl: d1, [], [], []
+          TypeDecl: d1, []
+            IdentifierType: ['date']
+        Decl: d2, [], [], []
+          TypeDecl: d2, []
+            IdentifierType: ['date']
+      TypeDecl: f, []
+        IdentifierType: ['int']
+  FuncDef: 
+    Decl: main, [], [], []
+      FuncDecl: 
+        ParamList: 
+          Typename: None, []
+            TypeDecl: None, []
+              IdentifierType: ['void']
+        TypeDecl: main, []
+          IdentifierType: ['int']
+    Compound: 
+      Decl: d1, [], [], []
+        TypeDecl: d1, []
+          IdentifierType: ['date']
+      Decl: d2, [], [], []
+        TypeDecl: d2, []
+          IdentifierType: ['date']
+      FuncCall: 
+        ID: printf
+        ExprList: 
+          Constant: string, "输入第一个日期:\n"
+      FuncCall: 
+        ID: scanf_s
+        ExprList: 
+          Constant: string, "%d,%d"
+          UnaryOp: &
+            StructRef: .
+              ID: d1
+              ID: month
+          UnaryOp: &
+            StructRef: .
+              ID: d1
+              ID: day
+      FuncCall: 
+        ID: printf
+        ExprList: 
+          Constant: string, "输入第一个日期:\n"
+      FuncCall: 
+        ID: scanf_s
+        ExprList: 
+          Constant: string, "%d,%d"
+          UnaryOp: &
+            StructRef: .
+              ID: d2
+              ID: month
+          UnaryOp: &
+            StructRef: .
+              ID: d2
+              ID: day
+      FuncCall: 
+        ID: printf
+        ExprList: 
+          Constant: string, "相差%d天"
+          FuncCall: 
+            ID: f
+            ExprList: 
+              ID: d1
+              ID: d2
+      Return: 
+        Constant: int, 0
+  FuncDef: 
+    Decl: f, [], [], []
+      FuncDecl: 
+        ParamList: 
+          Decl: d1, [], [], []
+            TypeDecl: d1, []
+              IdentifierType: ['date']
+          Decl: d2, [], [], []
+            TypeDecl: d2, []
+              IdentifierType: ['date']
+        TypeDecl: f, []
+          IdentifierType: ['int']
+    Compound: 
+      Decl: x, [], [], []
+        TypeDecl: x, []
+          IdentifierType: ['int']
+      Decl: m, [], [], []
+        TypeDecl: m, []
+          IdentifierType: ['int']
+      Decl: n, [], [], []
+        TypeDecl: n, []
+          IdentifierType: ['int']
+      Switch: 
+        StructRef: .
+          ID: d1
+          ID: month
+        Compound: 
+          Case: 
+            Constant: int, 1
+            Assignment: =
+              ID: m
+              StructRef: .
+                ID: d1
+                ID: day
+            Break: 
+          Case: 
+            Constant: int, 2
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: d1
+                  ID: day
+                Constant: int, 31
+            Break: 
+          Case: 
+            Constant: int, 3
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: d1
+                  ID: day
+                Constant: int, 59
+            Break: 
+          Case: 
+            Constant: int, 4
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: d1
+                  ID: day
+                Constant: int, 90
+            Break: 
+          Case: 
+            Constant: int, 5
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: d1
+                  ID: day
+                Constant: int, 120
+            Break: 
+          Case: 
+            Constant: int, 6
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: d1
+                  ID: day
+                Constant: int, 151
+            Break: 
+          Case: 
+            Constant: int, 7
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: d1
+                  ID: day
+                Constant: int, 181
+            Break: 
+          Case: 
+            Constant: int, 8
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: d1
+                  ID: day
+                Constant: int, 212
+            Break: 
+          Case: 
+            Constant: int, 9
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: d1
+                  ID: day
+                Constant: int, 243
+            Break: 
+          Case: 
+            Constant: int, 10
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: d1
+                  ID: day
+                Constant: int, 273
+            Break: 
+          Case: 
+            Constant: int, 11
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: d1
+                  ID: day
+                Constant: int, 304
+            Break: 
+          Case: 
+            Constant: int, 12
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: d1
+                  ID: day
+                Constant: int, 334
+            Break: 
+      Switch: 
+        StructRef: .
+          ID: d2
+          ID: month
+        Compound: 
+          Case: 
+            Constant: int, 1
+            Assignment: =
+              ID: n
+              StructRef: .
+                ID: d2
+                ID: day
+            Break: 
+          Case: 
+            Constant: int, 2
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: d2
+                  ID: day
+                Constant: int, 31
+            Break: 
+          Case: 
+            Constant: int, 3
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: d2
+                  ID: day
+                Constant: int, 59
+            Break: 
+          Case: 
+            Constant: int, 4
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: d2
+                  ID: day
+                Constant: int, 90
+            Break: 
+          Case: 
+            Constant: int, 5
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: d2
+                  ID: day
+                Constant: int, 120
+            Break: 
+          Case: 
+            Constant: int, 6
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: d2
+                  ID: day
+                Constant: int, 151
+            Break: 
+          Case: 
+            Constant: int, 7
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: d2
+                  ID: day
+                Constant: int, 181
+            Break: 
+          Case: 
+            Constant: int, 8
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: d2
+                  ID: day
+                Constant: int, 212
+            Break: 
+          Case: 
+            Constant: int, 9
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: d2
+                  ID: day
+                Constant: int, 243
+            Break: 
+          Case: 
+            Constant: int, 10
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: d2
+                  ID: day
+                Constant: int, 273
+            Break: 
+          Case: 
+            Constant: int, 11
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: d2
+                  ID: day
+                Constant: int, 304
+            Break: 
+          Case: 
+            Constant: int, 12
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: d2
+                  ID: day
+                Constant: int, 334
+            Break: 
+      Assignment: =
+        ID: x
+        BinaryOp: -
+          ID: m
+          ID: n
+      If: 
+        BinaryOp: >=
+          ID: x
+          Constant: int, 0
+        Return: 
+          ID: x
+        Return: 
+          UnaryOp: -
+            ID: x

@@ -1,0 +1,350 @@
+FileAST: 
+  Typedef: Date, [], ['typedef']
+    TypeDecl: Date, []
+      Struct: None
+        Decl: yue, [], [], []
+          TypeDecl: yue, []
+            IdentifierType: ['int']
+        Decl: tian, [], [], []
+          TypeDecl: tian, []
+            IdentifierType: ['int']
+  Decl: f, [], [], []
+    FuncDecl: 
+      ParamList: 
+        Decl: x, [], [], []
+          TypeDecl: x, []
+            IdentifierType: ['Date']
+        Decl: y, [], [], []
+          TypeDecl: y, []
+            IdentifierType: ['Date']
+      TypeDecl: f, []
+        IdentifierType: ['void']
+  FuncDef: 
+    Decl: main, [], [], []
+      FuncDecl: 
+        TypeDecl: main, []
+          IdentifierType: ['int']
+    Compound: 
+      Decl: date1, [], [], []
+        TypeDecl: date1, []
+          IdentifierType: ['Date']
+      Decl: date2, [], [], []
+        TypeDecl: date2, []
+          IdentifierType: ['Date']
+      FuncCall: 
+        ID: printf
+        ExprList: 
+          Constant: string, "输入一个日期（mm/dd）：\n"
+      FuncCall: 
+        ID: scanf_s
+        ExprList: 
+          Constant: string, "%d/%d"
+          UnaryOp: &
+            StructRef: .
+              ID: date1
+              ID: yue
+          UnaryOp: &
+            StructRef: .
+              ID: date1
+              ID: tian
+      FuncCall: 
+        ID: printf
+        ExprList: 
+          Constant: string, "再输入一个日期（在上一个日期之后）（mm/dd）：\n"
+      FuncCall: 
+        ID: scanf_s
+        ExprList: 
+          Constant: string, "%d/%d"
+          UnaryOp: &
+            StructRef: .
+              ID: date2
+              ID: yue
+          UnaryOp: &
+            StructRef: .
+              ID: date2
+              ID: tian
+      FuncCall: 
+        ID: f
+        ExprList: 
+          ID: date1
+          ID: date2
+      Return: 
+        Constant: int, 0
+  FuncDef: 
+    Decl: f, [], [], []
+      FuncDecl: 
+        ParamList: 
+          Decl: x, [], [], []
+            TypeDecl: x, []
+              IdentifierType: ['Date']
+          Decl: y, [], [], []
+            TypeDecl: y, []
+              IdentifierType: ['Date']
+        TypeDecl: f, []
+          IdentifierType: ['void']
+    Compound: 
+      Decl: m, [], [], []
+        TypeDecl: m, []
+          IdentifierType: ['int']
+      Decl: n, [], [], []
+        TypeDecl: n, []
+          IdentifierType: ['int']
+      Decl: t, [], [], []
+        TypeDecl: t, []
+          IdentifierType: ['int']
+      Switch: 
+        StructRef: .
+          ID: x
+          ID: yue
+        Compound: 
+          Case: 
+            Constant: int, 1
+            Assignment: =
+              ID: m
+              StructRef: .
+                ID: x
+                ID: tian
+            Break: 
+          Case: 
+            Constant: int, 2
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: x
+                  ID: tian
+                Constant: int, 31
+            Break: 
+          Case: 
+            Constant: int, 3
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: x
+                  ID: tian
+                Constant: int, 59
+            Break: 
+          Case: 
+            Constant: int, 4
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: x
+                  ID: tian
+                Constant: int, 90
+            Break: 
+          Case: 
+            Constant: int, 5
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: x
+                  ID: tian
+                Constant: int, 120
+            Break: 
+          Case: 
+            Constant: int, 6
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: x
+                  ID: tian
+                Constant: int, 151
+            Break: 
+          Case: 
+            Constant: int, 7
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: x
+                  ID: tian
+                Constant: int, 181
+            Break: 
+          Case: 
+            Constant: int, 8
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: x
+                  ID: tian
+                Constant: int, 212
+            Break: 
+          Case: 
+            Constant: int, 9
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: x
+                  ID: tian
+                Constant: int, 243
+            Break: 
+          Case: 
+            Constant: int, 10
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: x
+                  ID: tian
+                Constant: int, 273
+            Break: 
+          Case: 
+            Constant: int, 11
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: x
+                  ID: tian
+                Constant: int, 304
+            Break: 
+          Case: 
+            Constant: int, 12
+            Assignment: =
+              ID: m
+              BinaryOp: +
+                StructRef: .
+                  ID: x
+                  ID: tian
+                Constant: int, 334
+            Break: 
+      Switch: 
+        StructRef: .
+          ID: y
+          ID: yue
+        Compound: 
+          Case: 
+            Constant: int, 1
+            Assignment: =
+              ID: n
+              StructRef: .
+                ID: y
+                ID: tian
+            Break: 
+          Case: 
+            Constant: int, 2
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: y
+                  ID: tian
+                Constant: int, 31
+            Break: 
+          Case: 
+            Constant: int, 3
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: y
+                  ID: tian
+                Constant: int, 59
+            Break: 
+          Case: 
+            Constant: int, 4
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: y
+                  ID: tian
+                Constant: int, 90
+            Break: 
+          Case: 
+            Constant: int, 5
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: y
+                  ID: tian
+                Constant: int, 120
+            Break: 
+          Case: 
+            Constant: int, 6
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: y
+                  ID: tian
+                Constant: int, 151
+            Break: 
+          Case: 
+            Constant: int, 7
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: y
+                  ID: tian
+                Constant: int, 181
+            Break: 
+          Case: 
+            Constant: int, 8
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: y
+                  ID: tian
+                Constant: int, 212
+            Break: 
+          Case: 
+            Constant: int, 9
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: y
+                  ID: tian
+                Constant: int, 243
+            Break: 
+          Case: 
+            Constant: int, 10
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: y
+                  ID: tian
+                Constant: int, 273
+            Break: 
+          Case: 
+            Constant: int, 11
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: y
+                  ID: tian
+                Constant: int, 304
+            Break: 
+          Case: 
+            Constant: int, 12
+            Assignment: =
+              ID: n
+              BinaryOp: +
+                StructRef: .
+                  ID: y
+                  ID: tian
+                Constant: int, 334
+            Break: 
+      Assignment: =
+        ID: t
+        BinaryOp: -
+          ID: n
+          ID: m
+      FuncCall: 
+        ID: printf
+        ExprList: 
+          Constant: string, "：%d\n"
+          ID: t
