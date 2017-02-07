@@ -45,8 +45,23 @@ class simArray:
                     if A2B > 0.75 or B2A > 0.75:
                         print fileCluster[prob][indexA],fileCluster[prob][indexB],A2B,B2A
 
-
+help_text='''
+you can refer to readme.MD for help
+'''
 
 if __name__ == '__main__':
     a = simArray()
-    a.get_simi_from_path(os.path.dirname(__file__),language='c/c++')
+    import getopt
+    import sys
+    opts, args = getopt.getopt(sys.argv[1:], "d:l:h", ["help"])
+    help = False
+    for opt,val in opts:
+        if opt == '-d':
+            dir = val
+        elif opt == '-l':
+            lan = val
+        elif opt == '-h' or opt == '--help':
+            print 'opt'
+            help = True
+    if not help:
+        a.get_simi_from_path(val,language=lan)
